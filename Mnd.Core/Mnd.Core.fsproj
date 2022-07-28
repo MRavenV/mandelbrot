@@ -8,6 +8,12 @@
     <ItemGroup>
         <Compile Include="Util.fs" />
         <Compile Include="Color.fs" />
+        <Compile Include="Dithering.fs" />
+        <Compile Include="Easing.fs" />
+        <Compile Include="Mandelbrot.fs" />
+        <Compile Include="Options.fs" />
+        <Compile Include="Shaders.fs" />
+        <Compile Include="Vector2.fs" />
     </ItemGroup>
 
 </Project>
