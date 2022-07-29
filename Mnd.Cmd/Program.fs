@@ -31,6 +31,7 @@ let coreShader = Shaders.cycleMandelbrotSmooth escapeRadius maxIterations
 let screenShader = inverseViewProj >> coreShader
 
 let aaShader = wrapAntiAliasing subsampleCells screenShader
+let s = Seq.average aaShader
 
 let finalShader =
     toFloatTuple2
