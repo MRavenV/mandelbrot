@@ -7,17 +7,19 @@ printfn "Mandelbrot Generator"
 open Mnd.Core.Util
 open Mnd.Core.Render
 
-let fname = "out.png"
-let width = 800
-let height = 600
+let fname = @"D:\Temp\mandelbrot\out.png"
+let width = 2000
+let height = 1200
 let screenSize = (width, height)
 
-let cameraPosition = (0.0, 0.0)
+let frameHeight = 0.00003
+let cameraPosition = (-0.998, 0.3011038462)
+//let frameHeight = 1.2
+//let cameraPosition = (-0.75, 0.0)
 let rotationAngle = 0.0
-let frameHeight = 1.0
 let cameraScale = frameHeight   // The same?
 
-let maxIterations = 100
+let maxIterations = 1000
 let subsampleCells = 1
 let escapeRadius = 2000.0
 let cameraRotation = degToRad rotationAngle
@@ -47,26 +49,3 @@ printfn "Elapsed time: %f seconds." stopWatch.Elapsed.TotalSeconds
 printfn "Saving to: %s" fname
 bmp.Save(fname)
 printfn "Render saved."
-
-
-
-
-
-
-//let myFunc a b : int =
-//    a + b
-//    
-//
-//let myFunc a b f =
-//    a + f b
-//    
-//let rF a b =
-//    let k x = x * x
-//    myFunc a b k
-//    
-//type ZZZ = Zzz of whole : int * fractional : int
-//
-//let rec bar acc n =
-//    match n with
-//    | 0 -> acc
-//    | _ -> bar (acc+2) (n-1)
