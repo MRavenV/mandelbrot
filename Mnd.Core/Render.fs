@@ -32,18 +32,16 @@ module Render =
         let interval = 1.0 / (float cells)
         let halfInterval = interval/2.0
         seq { (i - 0.5 + halfInterval)..interval..(i + 0.5 - halfInterval) }
-
-    let wrapAntiAliasing cells f (x:float, y:float) =
+    
+    let wrapAntiAliasing cells (f: float * float -> RgbColor) (x, y) =
         let samp = subSample cells
 
-        // INITIAL LINE: let cols = seq {
         let cols = seq {
             for dy in (samp y) do
                 for dx in (samp x) do
                     yield f (dx, dy) }
 
-        // Seq.average cols
-        cols
+        Seq.average cols
 
     let inverseProject (screenWidth, screenHeight) =
         let aspectRatio = screenWidth / screenHeight

@@ -31,7 +31,6 @@ let coreShader = Shaders.cycleMandelbrotSmooth escapeRadius maxIterations
 let screenShader = inverseViewProj >> coreShader
 
 let aaShader = wrapAntiAliasing subsampleCells screenShader
-let s = Seq.average aaShader
 
 let finalShader =
     toFloatTuple2
@@ -48,3 +47,26 @@ printfn "Elapsed time: %f seconds." stopWatch.Elapsed.TotalSeconds
 printfn "Saving to: %s" fname
 bmp.Save(fname)
 printfn "Render saved."
+
+
+
+
+
+
+//let myFunc a b : int =
+//    a + b
+//    
+//
+//let myFunc a b f =
+//    a + f b
+//    
+//let rF a b =
+//    let k x = x * x
+//    myFunc a b k
+//    
+//type ZZZ = Zzz of whole : int * fractional : int
+//
+//let rec bar acc n =
+//    match n with
+//    | 0 -> acc
+//    | _ -> bar (acc+2) (n-1)
