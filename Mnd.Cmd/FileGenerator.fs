@@ -11,10 +11,7 @@ module FileGenerator =
         let height = 1200
         let screenSize = (width, height)
 
-//        let frameHeight = 0.00003
         let cameraPosition = (-0.998, 0.3011038462)
-        //let frameHeight = 1.2
-        //let cameraPosition = (-0.75, 0.0)
         let rotationAngle = 0.0
         let cameraScale = scale   // frameHeight
 
